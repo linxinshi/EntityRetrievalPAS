@@ -6,7 +6,7 @@ This repository contains resources developed within the following paper:
     Xinshi Lin, Wai Lam and Kwun Ping Lai. “Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content”, ICTIR 2018
 
 ## usage
-0. collect data from DBpedia and store them into a MongoDB database (see https://github.com/linxinshi/DBpedia-Wikipedia-Toolkit)
+0. collect data from DBpedia/Wikipedia and store them into a MongoDB database (see https://github.com/linxinshi/DBpedia-Wikipedia-Toolkit)
 
 1. build graph representation of the Wikipedia Category System (see folder "wikipedia_category_system")
 
