@@ -1,4 +1,5 @@
 ## Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content
+update 2018.10.26   will be released before 2018.11.30 (meeting some deadlines recently quite busy) 
 (in progress)
 
 This repository contains resources developed within the following paper:
