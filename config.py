@@ -48,15 +48,3 @@ QUERY_FILEPATH=os.path.join('query','simple_cluster','INEX_LD_v2.txt')
 PATH_GROUNDTRUTH=os.path.join('qrels-v2.txt')
 PATH_CATEGORY_DAG='category_dag_dbpedia_top10.pkl.gz'
 
-if SYSTEM_FLAG=='Windows':
-   LUCENE_INDEX_DIR=os.path.join('G:\\',LUCENE_INDEX_DIR)
-   LUCENE_INDEX_WIKI_DIR=os.path.join('H:\\',LUCENE_INDEX_WIKI_DIR)
-   LUCENE_INDEX_CATEGORY_CORPUS=os.path.join('H:\\',LUCENE_INDEX_CATEGORY_CORPUS)
-   QUERY_FILEPATH=os.path.join('E:\\','Entity_Retrieval',QUERY_FILEPATH)
-
-   PATH_GROUNDTRUTH=os.path.join('E:\\','Entity_Retrieval','Balog_SIGIR13',PATH_GROUNDTRUTH)
-   mongo_port=27017
-   if TAXONOMY=='Wikipedia':
-      PATH_CATEGORY_DAG=os.path.join('F:\\','研究数据','Wikipedia_DBpedia_data','DBpedia_data','2015-10','category_structure_processing',PATH_CATEGORY_DAG)
-      
-     
