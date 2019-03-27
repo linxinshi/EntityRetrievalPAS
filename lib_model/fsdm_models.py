@@ -249,14 +249,7 @@ def scoreWikiTree(queryObj,T_obj,lucene_wiki,field,param_server):
         nonlocal T_obj,T,lucene_wiki,queryObj
         nonlocal field,maxScore
         nonlocal curPath,bestPath,sum_w_tf_ug,sum_w_tf_ob,sum_w_tf_ub
-        # slow  revise traverse
-        #print (T[v]['label'],sum_w_len,len_path)
-        #print (curPath)
-        #print (sum_w_len)
-        #print (sum_w_tf_ug)
-        #print (sum_w_tf_ob)
-        #print (sum_w_tf_ub)
-        #print ('----')
+
         content=' '.join(T[v][field])
         T[v]['list_term_object']=List_Term_Object(content,True,' ',None,is_bigram_used=True)
         lto=T[v]['list_term_object']
@@ -330,7 +323,6 @@ def scoreWikiTree(queryObj,T_obj,lucene_wiki,field,param_server):
                   maxScore=score
                   bestPath=curPath[:]
               
-
     # ----------------------------------------------------    
     for v in T[1]['child']:  
         #print ('traverse '+T[v]['label'])    
