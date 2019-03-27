@@ -21,17 +21,18 @@ def fsdmSim(queryObj,entityObj,lucene_obj,param_server,w2vmodel=None,fields=LIST
     # w is a dict of weights for each field
     # compute ft
     F=fields
-    for t in queryObj.ngrams[1]:
-        w=get_mapping_prob(t,lucene_obj,ordered=True,slop=0,is_bigram=False,params=param_server,fields=F)
-        ft_temp=0.0
-        for field in w:
-            tf=entityObj.term_freqs[field].get(t,0)
-            cf=lucene_obj.get_coll_termfreq(t, field)            
-            ptd=get_dirichlet_prob(tf,entityObj.lengths[field],cf,len_C_f[field],mu[field])
-            if ptd>0:
-               ft_temp+=ptd*w[field]
-        if ft_temp>0:
-           ft+=log(ft_temp)
+    if LAMBDA_T>0:
+       for t in queryObj.ngrams[1]:
+           w=get_mapping_prob(t,lucene_obj,ordered=True,slop=0,is_bigram=False,params=param_server,fields=F)
+           ft_temp=0.0
+           for field in w:
+               tf=entityObj.term_freqs[field].get(t,0)
+               cf=lucene_obj.get_coll_termfreq(t, field)            
+               ptd=get_dirichlet_prob(tf,entityObj.lengths[field],cf,len_C_f[field],mu[field])
+               if ptd>0:
+                  ft_temp+=ptd*w[field]
+           if ft_temp>0:
+              ft+=log(ft_temp)
     # compute fo
     if LAMBDA_O>0:
        for bigram in queryObj.ngrams[2]:
@@ -272,7 +273,7 @@ def scoreWikiTree(queryObj,T_obj,lucene_wiki,field,param_server):
                 term1,term2=bigram.split()
                 assert len(term1)>0 and len(term2)>0
                 p2=tf=0
-                # can be optimized via suffix array
+                # can be optimized with suffix array
                 for p1 in range(len(queryObj.ngrams[1])):
                     if queryObj.ngrams[1][p1] not in [term1,term2]:
                        continue
