@@ -44,7 +44,7 @@ The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category
 
 I do not like wasting time on tuning parameters to achieve "superior performance to the state-of-the-art models" (typically I spend less than an hour on tuning my work). The ranking system will output much better results if you carefully tune it.
 
-The improvements brought by this framework using the DBpedia ontology (instance_types.ttl) are little because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little.
+There are less improvements brought by this framework using the DBpedia ontology (instance_types.ttl) because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little.
 
 ## contact
 Xinshi Lin (xslin(at)se.cuhk.edu.hk)
