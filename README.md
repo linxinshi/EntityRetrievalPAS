@@ -40,6 +40,8 @@ Most parameters are specified in config.py and config_object.py. The normalized 
 
 The parameters "WIKI_LAMBDA_T", "WIKI_LAMBDA_O" and "WIKI_LAMBDA_U" are recommended to set to 1,0,0 to speed up the retrieval. This setting is already able to reproduce most results reported in the paper that incorporates the Wikipedia information.
 
+The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category_corpus.py and "TOP_CATEGORY_NUM" in config_object.py matter the retrieval performance as well as other parameters for retrieval models.
+
 I do not like wasting time on tuning parameters to achieve "superior performance to the state-of-the-art models" (typically I spend less than an hour on tuning my work). The ranking system will output much better results if you carefully tune it.
 
 ## contact
