@@ -12,7 +12,7 @@ This repository contains resources developed within the following paper:
 
 1. build graph representation of the Wikipedia Category System (see folder "wikipedia_category_system")
 
-2. build index (see folder "build_index")
+2. build index (see folder "build_index" and "build_wikipedia_index")
 
 3. edit config.py, config_object.py  and mongo_object.py to specify parameters for retrieval models and index path etc.
 
