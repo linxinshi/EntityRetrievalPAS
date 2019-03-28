@@ -273,7 +273,6 @@ def scoreWikiTree(queryObj,T_obj,lucene_wiki,field,param_server):
                 term1,term2=bigram.split()
                 assert len(term1)>0 and len(term2)>0
                 p2=tf=0
-                # can be optimized with suffix array
                 for p1 in range(len(queryObj.ngrams[1])):
                     if queryObj.ngrams[1][p1] not in [term1,term2]:
                        continue
