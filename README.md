@@ -46,6 +46,6 @@ I do not like wasting time on tuning parameters to achieve "superior performance
 Xinshi Lin (xslin(at)se.cuhk.edu.hk)
 
 ## license
-Creative Commons
+Beer-ware or Snack-ware
 
 If you use this implementation or thoughts discussed in this paper for your research, please consider citing it.
