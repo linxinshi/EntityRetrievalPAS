@@ -266,13 +266,6 @@ def main(conf_paras):
            with gzip.open(filename+'.gz','wb') as f:
                 f.writelines([line.encode('utf-8') for line in list_allResult[name]])           
              
-    res_mp_filepath=os.path.join(RES_STORE_PATH,'pylucene_all_mp.runs')
-    cmp_mp_filepath=os.path.join(RES_STORE_PATH,'result_mp.txt')
-    cmp_mp_train_filepath=os.path.join(RES_STORE_PATH,'result_train.txt')
-    cmd='trec_eval -q -m num_q -m num_ret -m num_rel -m num_rel_ret -m P.5,10,100 -m map_cut.10,100 -m ndcg_cut.10,100 %s %s > %s'%(PATH_GROUNDTRUTH,res_mp_filepath,cmp_mp_filepath)
-    os.system(cmd)
-    cmd='trec_eval -m map_cut.100 %s %s > %s'%(PATH_GROUNDTRUTH,res_mp_filepath,cmp_mp_train_filepath)
-    os.system(cmd)
     print ('total running time='+str((datetime.datetime.now() - starttime_total).seconds))
 
     
