@@ -1,5 +1,5 @@
 ## Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content
-update 2019.03.26 upload the revised source codes. Other cleanup work in progress.
+update 2019.03.26 upload the revised source codes.
 
 <del> update 2018.10.26: will be released with faster indexer and simplified implementation before 2018.11.30 (I am busy with some deadlines recently...) </del> 
 
