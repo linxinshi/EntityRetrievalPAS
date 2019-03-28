@@ -1,8 +1,4 @@
 ## Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content
-update 2019.03.26 upload the revised source codes.
-
-<del> update 2018.10.26: will be released with faster indexer and simplified implementation before 2018.11.30 (I am busy with some deadlines recently...) </del> 
-
 This repository contains resources developed within the following paper:
 
     Xinshi Lin, Wai Lam and Kwun Ping Lai. “Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content”, ICTIR 2018
@@ -44,12 +40,12 @@ The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category
 
 There are less improvements brought by this framework using the DBpedia ontology (instance_types.ttl) because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little. If you want answers found through graph topologies instead of text information, consider some completely graph-based "entity search" or "relevance search" methods.
 
-I do not like wasting time on tuning parameters to achieve "superior performance to the state-of-the-art models" (typically I spend less than an hour on tuning my work). The ranking system will output better results if you adjust it.
+The ranking system will output better results than those reported in the paper if you adjust it carefully.
 
 ## contact
 Xinshi Lin (xslin(at)se.cuhk.edu.hk)
 
 ## license
-Beer-ware or Snack-ware
+Beer-ware or Snack-ware license
 
 If you use this implementation or thoughts discussed in this paper for your research, please consider citing it.
