@@ -18,7 +18,8 @@ This repository contains resources developed within the following paper:
 
 *this implementation supports multi-processing, specify NUM_PROCESS in config.py. The program will split the queries into several parts and each process will handle one of them. Finally the program merges all results and output a complete one.
 
-6. This implementation exploits a caching strategy for bigrams if use set the parameter "model" to "sdm" and "fsdm", or you enable path-aware smoothing in the Wikipedia article tree with non-zero parameters "WIKI_LAMBDA_O" and "WIKI_LAMBDA_U". First set "hitsperpage" and "NUM_PROCESS" to 1 and run the system. Terminate it after few minutes. Then login to the MongoDB console to create index for the automatically created collections INDEX_NAME_{tf,cf}_{cache,mapping_prob_cache}. And then run the system until it ends. Then the system will automatically cache all bigrams occur in the query across the indices.
+6. This implementation exploits a caching strategy for bigrams if set the parameter "model" to "sdm" and "fsdm", or you enable path-aware smoothing in the Wikipedia article tree with non-zero parameters "WIKI_LAMBDA_O" and "WIKI_LAMBDA_U". 
+    First set "hitsperpage" and "NUM_PROCESS" to 1 and run the system. Terminate it after few minutes. Then login to the MongoDB console to create index for the automatically created collections INDEX_NAME_{tf,cf}_{cache,mapping_prob_cache}. And then run the system until it ends. Then the system will automatically cache all bigrams occur in the query across the indices.
 
 ## requirements
 Python 3.4+
