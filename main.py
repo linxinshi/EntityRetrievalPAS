@@ -187,8 +187,6 @@ def main(conf_paras):
        RES_STORE_PATH=str(datetime.datetime.now()).replace(':','-').replace(' ','-')[:-7]   
     
     RES_STORE_PATH=os.path.join('Retrieval_result',RES_STORE_PATH)
-    if SYSTEM_FLAG=='Windows':
-       RES_STORE_PATH=os.path.join('F:\\',RES_STORE_PATH) 
        
     print ('store_path=%s'%(RES_STORE_PATH))
     os.mkdir(RES_STORE_PATH)
