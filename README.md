@@ -41,6 +41,8 @@ The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category
 
 There are less improvements brought by this framework using the DBpedia ontology (instance_types.ttl) because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little. If you want answers found through the strcture of the graph instead of text information, consider some completely graph-based "entity search" or "relevance search" methods. (but the problem setting is slightly different because a query entity and an answer entity are required for reference)
 
+In fact, directly applying fsdm on the bag of words representation of a wikipedia article can also bring improvements. However, the path-aware smoothing approach on a wiki tree usually brings more (about 0.5%~2%). 
+
 The ranking system will output better results than those reported in the paper if you adjust it carefully.
 
 ## contact
