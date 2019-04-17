@@ -4,7 +4,7 @@ This repository contains resources developed within the following paper:
     Xinshi Lin, Wai Lam and Kwun Ping Lai. “Entity Retrieval in the Knowledge Graph with Hierarchical Entity Type and Content”, ICTIR 2018
 
 ## usage
-0. collect data from DBpedia/Wikipedia and store them into a MongoDB database (see https://github.com/linxinshi/DBpedia-Wikipedia-Toolkit)
+0. collect data from DBpedia/Wikipedia and store them into a MongoDB database (see https://github.com/linxinshi/DBpedia-Wikipedia-Toolkit). This step extracts all SPO triples in .ttl or .tql files into the database.
 
 1. build graph representation of the Wikipedia Category System (see folder "wikipedia_category_system")
 
@@ -24,7 +24,7 @@ This repository contains resources developed within the following paper:
 ## requirements
 Python 3.4+
 
-NLTK, Gensim, Pymongo
+NLTK (with stopword and punkt packages), Gensim, Pymongo
 
 NetworkX <= 1.11
 
@@ -37,9 +37,9 @@ Most parameters are specified in config.py and config_object.py. The normalized 
 
 The parameters "WIKI_LAMBDA_T", "WIKI_LAMBDA_O" and "WIKI_LAMBDA_U" are recommended to set to 1,0,0 to speed up the retrieval. This setting is already able to reproduce most results reported in the paper that incorporates the Wikipedia information.
 
-The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category_corpus.py and "TOP_CATEGORY_NUM" in config_object.py matter the retrieval performance as well as other parameters for retrieval models.
+The parameter "NUMBER_TOP_K_PARENT" in wikipedia_category_system/create_category_corpus.py and "TOP_CATEGORY_NUM" in config_object.py matter the retrieval performance as well as other parameters for retrieval models. We use NUMBER_TOP_K_PARENT=10 for MLM+type/all and NUMBER_TOP_K_PARENT=5 for other models in the experiment. 
 
-There are less improvements brought by this framework using the DBpedia ontology (instance_types.ttl) because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little. If you want answers found through graph topologies instead of text information, consider some completely graph-based "entity search" or "relevance search" methods.
+There are less improvements brought by this framework using the DBpedia ontology (instance_types.ttl) because the DBpedia ontology is a small tree-like strcture and each entity is assigned with only one or two types. The effect of similar context sharing by entities with the same type is little. If you want answers found through the strcture of the graph instead of text information, consider some completely graph-based "entity search" or "relevance search" methods. (but the problem setting is slightly different because a query entity and an answer entity are required for reference)
 
 The ranking system will output better results than those reported in the paper if you adjust it carefully.
 
