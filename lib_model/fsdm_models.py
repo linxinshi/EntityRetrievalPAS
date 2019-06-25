@@ -192,7 +192,7 @@ def fsdm_sas(queryObj,entityObj,structure,lucene_handler,param_server,mongoObj=N
                       ptd_f=(tf_d_f+Dt)/(len_d_f[f]+Nt) if len_d_f[f]+Nt>0 else 0.0
                       ptd+=w[(b,ordered)][f]*ptd_f
                   if ptd>0:
-                     f_p[(ordered,slop)]+=log(ptd)*w[(b,ordered)][f]                 
+                     f_p[(ordered,slop)]+=log(ptd)                 
            # end computing feature function
            score_p=LAMBDA_T*ft_p+LAMBDA_O*f_p[(True,0)]+LAMBDA_U*f_p[(False,6)]
            if score_p>max_score_p_cat:
